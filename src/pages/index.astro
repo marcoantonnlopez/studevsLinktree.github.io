@@ -1,42 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import facebook from "../assets/imgs/Facebook.svg"
+import discord from "../assets/imgs/Discord.svg"
+import instagram from "../assets/imgs/Instagram.svg"
+import linkedin from "../assets/imgs/Linkedin.svg"
+import x from "../assets/imgs/twitterX.svg"
+import youtube from "../assets/imgs/Youtube.svg"
+import logoStudevs from "../assets/imgs/logoStudevs.svg"
+import { Image } from "astro:assets"
+import txt from "../assets/imgs/text.svg"
 ---
 
 <Layout title="Studevs">
   <div>
-    <img id="logoStudevs" src="./imgs/logoStudevs.svg" alt="" />
+    <Image src={logoStudevs} id="logoStudevs" alt="" />
   </div>
   <div>
     <!-- <h1>Get to know us!</h1> -->
-    <img id="txt" src="./imgs/text.svg" alt="" />
+    <Image src={txt} id="txt" alt="" />
   </div>
   <div id="logos">
     <a
       href="https://l.instagram.com/?u=https%3A%2F%2Fdiscord.gg%2F2x6t2tPFUr&e=AT1iSZUimjjaOi4guw9mQ95V1cvAupiAGXjBnv-ctSY-JMd12wdyYzEprjdjne7w_yHYdRXWMZsVJOl_1R1C8iuaTpSXcRryF7mOZiw"
       class="container"
     >
-      <img src="./imgs/Discord.svg" alt="" id="img1" />
+      <Image src={discord} alt="" id="img1" />
       <p>Discord</p>
     </a>
     <a
       href="https://www.linkedin.com/company/studevs/?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3BmfqA1ajzQsWW7pr4Qr5eFA%3D%3D"
       class="container"
     >
-      <img src="./imgs/Linkedin.svg" alt="" id="img2" />
+      <Image src={linkedin} alt="" id="img2" />
       <p>LinkedIn</p>
     </a>
     <a href="https://www.instagram.com/studevs_official/" class="container">
-      <img src="./imgs/Instagram.svg" alt="" id="img3" />
+      <Image src={instagram} alt="" id="img3" />
       <p>Instagram</p>
     </a>
 
     <a href="https://twitter.com/StuDevsOfficial" class="container">
-      <img src="./imgs/twitterX.svg" alt="" id="img4" />
+      <Image src={x} alt="" id="img4" />
       <p>X</p>
     </a>
 
     <a href="https://www.youtube.com/@StuDevsOfficial" class="container">
-      <img src="./imgs/Youtube.svg" alt="" id="img5" />
+      <Image src={youtube} alt="" id="img5" />
       <p>YouTube</p>
     </a>
 
@@ -44,7 +53,7 @@ import Layout from "../layouts/Layout.astro"
       href="https://www.facebook.com/profile.php?id=100094110701290"
       class="container"
     >
-      <img src="./imgs/Facebook.svg" alt="" id="img6" />
+      <Image src={facebook} alt="" id="img6" />
       <p>Facebook</p>
     </a>
   </div>
