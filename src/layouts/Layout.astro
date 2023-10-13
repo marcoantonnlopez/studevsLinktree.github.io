@@ -1,58 +1,28 @@
-<!DOCTYPE html>
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
-    <link rel="icon" href="./imgs/log.svg" type="image/x-icon">
-    <title>Studevs</title>
-</head>
-
-<body>
-    <div>
-        <img id="logoStudevs" src="./imgs/logoStudevs.svg" alt="">
-    </div>
-    <div>
-        <!-- <h1>Get to know us!</h1> -->
-        <img id="txt" src="./imgs/text.svg" alt="">
-    </div>
-    <div id="logos">
-        <a href="https://l.instagram.com/?u=https%3A%2F%2Fdiscord.gg%2F2x6t2tPFUr&e=AT1iSZUimjjaOi4guw9mQ95V1cvAupiAGXjBnv-ctSY-JMd12wdyYzEprjdjne7w_yHYdRXWMZsVJOl_1R1C8iuaTpSXcRryF7mOZiw"
-            class="container">
-            <img src="./imgs/Discord.svg" alt="" id="img1">
-            <p>Discord</p>
-        </a>
-        <a href="https://www.linkedin.com/company/studevs/?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3BmfqA1ajzQsWW7pr4Qr5eFA%3D%3D"
-            class="container">
-            <img src="./imgs/Linkedin.svg" alt="" id="img2">
-            <p>LinkedIn</p>
-        </a>
-        <a href="https://www.instagram.com/studevs_official/" class="container">
-            <img src="./imgs/Instagram.svg" alt="" id="img3">
-            <p>Instagram</p>
-        </a>
-
-        <a href="https://twitter.com/StuDevsOfficial" class="container">
-            <img src="./imgs/twitterX.svg" alt="" id="img4">
-            <p>X</p>
-        </a>
-
-        <a href="https://www.youtube.com/@StuDevsOfficial" class="container">
-            <img src="./imgs/Youtube.svg" alt="" id="img5">
-            <p>YouTube</p>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=100094110701290" class="container">
-            <img src="./imgs/Facebook.svg" alt="" id="img6">
-            <p>Facebook</p>
-    </div>
-
-</body>
-
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
 </html>
-
-<style>
+<style is:global>
+	
     @import url('https://fonts.cdnfonts.com/css/aileron');
 
     * {
@@ -164,4 +134,5 @@
             font-weight: 800;
         }
     }
+
 </style>
