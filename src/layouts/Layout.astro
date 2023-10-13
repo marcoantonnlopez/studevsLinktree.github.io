@@ -1,137 +1,150 @@
 ---
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
+
+const DEFAULT_TITLE = "Studevs"
+const DESCRIPTION = "Transform curious learnes into tech visionaries 🚀"
+
+// https://docs.astro.build/en/reference/api-reference/#astrourl
+// Construct a canonical URL using your production domain
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <meta property="og:title" content={DEFAULT_TITLE} />
+    <meta property="og:description" content={DESCRIPTION} />
+    <meta property="og:url" content={canonicalURL} />
+    <!-- <meta property="og:image" content={socialImageUrl.src} /> -->
+
+    <meta property="twitter:title" content={DEFAULT_TITLE} />
+    <meta property="twitter:description" content={DESCRIPTION} />
+    <!-- <meta property="twitter:image" content={socialImageUrl.src} />
+        <meta property="twitter:site" content={TWITTER_HANDLE} />
+        <meta property="twitter:creator" content={TWITTER_HANDLE} />
+        <meta property="twitter:card" content="summary_large_image" /> -->
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-    @import url('https://fonts.cdnfonts.com/css/aileron');
+  @import url("https://fonts.cdnfonts.com/css/aileron");
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-        background-color: #0E1239;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        font-family: 'Aileron', sans-serif;
-    }
+  body {
+    background-color: #0e1239;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-family: "Aileron", sans-serif;
+  }
 
-    #logoStudevs {
-        margin: 40px 0 20px 0;
-        height: 30vh;
-        width: 30vw;
-        object-fit: contain;
-    }
+  #logoStudevs {
+    margin: 40px 0 20px 0;
+    height: 30vh;
+    width: 30vw;
+    object-fit: contain;
+  }
 
-    /* h1 {
+  /* h1 {
         font-size: 5rem;
         font-weight: 950;
         color: aliceblue;
     } */
+  #txt {
+    width: 40vw;
+  }
+
+  #logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vw;
+    margin: 5rem 0;
+  }
+
+  #logos img {
+    width: 7vw;
+    margin: 0 10px;
+    transition: 0.5s;
+  }
+
+  #logos img:hover {
+    transform: scale(1.1);
+  }
+
+  #logos .container {
+    background-color: #0111a500;
+  }
+
+  #logos .container p {
+    display: none;
+  }
+
+  /*!--------MEDIA QUERIES------- */
+
+  @media screen and (max-width: 1034px) {
+    #logoStudevs {
+      height: 20vh;
+      width: 20vw;
+    }
+
     #txt {
-        width: 40vw;
+      width: 50vw;
     }
 
     #logos {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 50vw;
-        margin: 5rem 0;
-
+      width: 70vw;
+      flex-direction: column;
+      height: auto;
     }
 
     #logos img {
-        width: 7vw;
-        margin: 0 10px;
-        transition: 0.5s;
-    }
-
-    #logos img:hover {
-        transform: scale(1.1);
+      width: 07vw;
+      margin: 10px 40px;
     }
 
     #logos .container {
-        background-color: #0111a500;
-
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: #3b3b3b73;
+      width: 100%;
+      height: 08vh;
+      border-radius: 50px;
+      margin-bottom: 20px;
     }
 
     #logos .container p {
-        display: none;
+      display: flex;
+      color: white;
+      width: 80%;
+      margin-left: 05vw;
+
+      font-size: 1.5rem;
+      font-weight: 800;
     }
-
-
-
-    /*!--------MEDIA QUERIES------- */
-
-    @media screen and (max-width: 1034px) {
-        #logoStudevs {
-            height: 20vh;
-            width: 20vw;
-        }
-
-        #txt {
-            width: 50vw;
-        }
-
-        #logos {
-            width: 70vw;
-            flex-direction: column;
-            height: auto;
-        }
-
-        #logos img {
-            width: 07vw;
-            margin: 10px 40px;
-        }
-
-        #logos .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: #3b3b3b73;
-            width: 100%;
-            height: 08vh;
-            border-radius: 50px;
-            margin-bottom: 20px;
-
-        }
-
-        #logos .container p {
-            display: flex;
-            color: white;
-            width: 80%;
-            margin-left: 05vw;
-
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
-    }
-
+  }
 </style>
