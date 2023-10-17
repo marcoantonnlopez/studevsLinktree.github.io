@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import facebook from "../assets/imgs/Facebook.svg"
-import discord from "../assets/imgs/Discord.svg"
-import instagram from "../assets/imgs/Instagram.svg"
-import linkedin from "../assets/imgs/Linkedin.svg"
-import x from "../assets/imgs/twitterX.svg"
-import youtube from "../assets/imgs/Youtube.svg"
-import logoStudevs from "../assets/imgs/logoStudevs.svg"
-import twitch from "../assets/imgs/TwitchGlitchWhite.svg"
 import { Image } from "astro:assets"
-import txt from "../assets/imgs/text.svg"
+import discord from "@/assets/images/Discord.svg"
+import facebook from "@/assets/images/Facebook.svg"
+import instagram from "@/assets/images/Instagram.svg"
+import Layout from "@/layouts/Layout.astro"
+import linkedin from "@/assets/images/Linkedin.svg"
+import logoStudevs from "@/assets/images/logoStudevs.svg"
+import twitch from "@/assets/images/TwitchGlitchWhite.svg"
+import txt from "@/assets/images/text.svg"
+import x from "@/assets/images/twitterX.svg"
+import youtube from "@/assets/images/Youtube.svg"
 
 const SOCIAL_LINKS = [
   {
@@ -52,11 +52,15 @@ const SOCIAL_LINKS = [
 
 <Layout title="Studevs">
   <div>
-    <Image src={logoStudevs} id="logoStudevs" alt="" />
+    <Image src={logoStudevs} id="logoStudevs" alt="Studevs Logo" />
   </div>
   <div>
     <!-- <h1>Get to know us!</h1> -->
-    <Image src={txt} id="txt" alt="" />
+    <Image
+      src={txt}
+      id="txt"
+      alt="Get to know us! Click the icon to see our social media"
+    />
   </div>
   <div id="logos">
     {
